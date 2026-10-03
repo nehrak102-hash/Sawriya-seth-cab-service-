@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sawriya Seth Cab Service</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#faf7ef;color:#222}
+header{background:#111;color:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:22px;font-weight:800;color:#f4c542}.call{color:#fff;text-decoration:none;background:#168a45;padding:10px 15px;border-radius:24px}
+.hero{padding:65px 7%;background:linear-gradient(135deg,#171717,#3b321b);color:#fff}
+.hero h1{font-size:clamp(34px,7vw,62px);margin:0 0 12px}.hero p{font-size:19px;max-width:650px;line-height:1.6}
+.btn{display:inline-block;padding:14px 20px;border-radius:10px;text-decoration:none;font-weight:700;margin:8px 6px 0 0}.primary{background:#f4c542;color:#111}.green{background:#19a653;color:#fff}
+section{padding:45px 7%;max-width:1100px;margin:auto}.title{text-align:center;margin-bottom:28px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}.card{background:#fff;padding:22px;border-radius:16px;box-shadow:0 4px 18px #00000012}.card h3{margin-top:0}
+form{background:#fff;padding:24px;border-radius:18px;box-shadow:0 4px 18px #00000012;max-width:700px;margin:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+label{font-weight:700;font-size:14px}input,select,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #ddd;border-radius:9px;font-size:15px}textarea{min-height:90px}
+button{border:0;cursor:pointer;font-size:16px}.note{text-align:center;color:#666;font-size:13px}.contact{background:#171717;color:#fff;text-align:center;max-width:none}
+footer{text-align:center;padding:18px;background:#0c0c0c;color:#bbb}
+</style>
+</head>
+<body>
+<header><div class="logo">🚕 Sawriya Seth Cab Service</div><a class="call" href="tel:+918619932644">Call Now</a></header>
+
+<div class="hero">
+<h1>Safe & Reliable Cab Service</h1>
+<p>Gurugram और आसपास के लिए भरोसेमंद cab booking. Airport, local, outstation और one-way rides के लिए booking करें।</p>
+<a class="btn primary" href="#booking">Book a Cab</a>
+<a class="btn green" href="https://wa.me/918619932644" target="_blank">WhatsApp</a>
+</div>
+
+<section>
+<h2 class="title">Our Services</h2>
+<div class="cards">
+<div class="card"><h3>🚕 Local Cab</h3><p>Gurugram city rides के लिए cab booking.</p></div>
+<div class="card"><h3>✈️ Airport Transfer</h3><p>Airport pickup और drop service.</p></div>
+<div class="card"><h3>🛣️ Outstation</h3><p>Delhi NCR और दूसरे शहरों के लिए यात्रा.</p></div>
+<div class="card"><h3>↔️ One Way</h3><p>One-way pickup और drop booking.</p></div>
+</div>
+</section>
+
+<section id="booking">
+<h2 class="title">Book Your Cab</h2>
+<form id="bookingForm">
+<div class="grid">
+<div><label>नाम</label><input id="name" required></div>
+<div><label>मोबाइल नंबर</label><input id="phone" type="tel" required></div>
+<div><label>Pickup Location</label><input id="pickup" required></div>
+<div><label>Drop Location</label><input id="drop" required></div>
+<div><label>Date</label><input id="date" type="date" required></div>
+<div><label>Time</label><input id="time" type="time" required></div>
+<div><label>Cab Type</label><select id="cab"><option>Sedan</option><option>SUV</option><option>Hatchback</option></select></div>
+<div><label>Passengers</label><input id="passengers" type="number" min="1" max="10" value="1"></div>
+</div>
+<div style="margin-top:14px"><label>Extra Message</label><textarea id="message" placeholder="कोई विशेष जानकारी..."></textarea></div>
+<button class="btn green" style="width:100%;margin-top:16px">WhatsApp पर Booking भेजें</button>
+<p class="note">Booking details WhatsApp पर भेजी जाएँगी।</p>
+</form>
+</section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+<p>📞 +91 86199 32644</p>
+<p>📍 Gurugram, Haryana</p>
+<a class="btn green" href="https://wa.me/918619932644" target="_blank">Chat on WhatsApp</a>
+</section>
+
+<footer>© 2026 Sawriya Seth Cab Service. All rights reserved.</footer>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const msg=`*Sawriya Seth Cab Service - New Booking*%0A%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0AMobile: ${encodeURIComponent(document.getElementById('phone').value)}%0APickup: ${encodeURIComponent(document.getElementById('pickup').value)}%0ADrop: ${encodeURIComponent(document.getElementById('drop').value)}%0ADate: ${encodeURIComponent(document.getElementById('date').value)}%0ATime: ${encodeURIComponent(document.getElementById('time').value)}%0ACab: ${encodeURIComponent(document.getElementById('cab').value)}%0APassengers: ${encodeURIComponent(document.getElementById('passengers').value)}%0AMessage: ${encodeURIComponent(document.getElementById('message').value)}`;
+ window.open('https://wa.me/918619932644?text='+msg,'_blank');
+});
+</script>
+</body>
+</html>
